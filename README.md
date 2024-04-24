@@ -58,6 +58,10 @@ docker-compose build
 ```
 docker-compose up
 ```
+* Seed the database
+```
+docker-compose run --rm app bundle exec rake fae:seed_db
+```
 * Now, create your first user.</br>
 To do it access:</br>
 [http://localhost:3000/admin/first_user](http://localhost:3000/admin/first_user/)

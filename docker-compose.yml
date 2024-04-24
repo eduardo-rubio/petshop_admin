@@ -1,7 +1,8 @@
-version: '2'
-
 services:
   postgres:
+    environment:
+      # - POSTGRES_USER=someuser
+      - POSTGRES_PASSWORD=password
     image: 'postgres:9.5'
     volumes:
       - 'postgres:/var/lib/postgresql/data'
