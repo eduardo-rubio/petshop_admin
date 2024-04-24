@@ -34,7 +34,7 @@ Have Docker installed in your machine
 
 * To see this application working in your machine, clone this project with:
 ```
-git clone git@github.com:toticavalcanti/petshop_admin.git
+git clone git@github.com:eduardo-rubio/petshop_admin.git
 ```
 ### Installing PET SHOP ADMIN
 
@@ -54,13 +54,13 @@ docker-compose run --rm app bundle exec rake db:create db:migrate
 ```
 docker-compose build
 ```
-* Up the application
-```
-docker-compose up
-```
 * Seed the database
 ```
 docker-compose run --rm app bundle exec rake fae:seed_db
+```
+* Up the application
+```
+docker-compose up
 ```
 * Now, create your first user.</br>
 To do it access:</br>
