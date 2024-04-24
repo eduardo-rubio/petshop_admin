@@ -65,3 +65,11 @@ docker-compose up
 * Now, create your first user.</br>
 To do it access:</br>
 [http://localhost:3000/admin/first_user](http://localhost:3000/admin/first_user/)
+
+
+[http://localhost:3000/sidekiq/](http://localhost:3000/sidekiq/)
+
+* Redis
+``` 
+redis-cli -h 127.0.0.1 -p 6379 PING
+``` 
