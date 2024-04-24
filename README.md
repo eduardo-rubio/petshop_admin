@@ -73,3 +73,20 @@ To do it access:</br>
 ``` 
 redis-cli -h 127.0.0.1 -p 6379 PING
 ``` 
+
+* Open Ports
+```
+docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}" -a
+```
+* Postgres connection
+```
+{
+  "label": "127.0.0.1",
+  "host": "127.0.0.1",
+  "user": "postgres",
+  "port": 6543,
+  "ssl": false,
+  "database": "",
+  "password": "password"
+}
+```
