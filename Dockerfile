@@ -25,3 +25,5 @@ COPY . .
 ENV BUNDLE_PATH /box
 # Copia nosso código para dentro do container
 COPY . .
+
+ENV PORT=3000
