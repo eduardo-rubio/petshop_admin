@@ -19,8 +19,10 @@ services:
   postgres:
     image: 'postgres'
     environment:
-      # - POSTGRES_USER=someuser
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    container_name: ${DATABASE_HOST}
     ports:
       - "6543:5432"
     volumes:

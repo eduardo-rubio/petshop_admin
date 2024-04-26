@@ -2,20 +2,20 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV['DATABASE_HOST'] %>
+  # host: <%= ENV['DATABASE_HOST'] %>
   port: <%= ENV['DATABASE_PORT'] || '5432' %>
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  timeout: 5000
+  # timeout: 5000
 
 development:
   <<: *default
-  database: petshop_admin_development
+  database: <%= ENV['DATABASE_NAME'] %>
 
 test:
   <<: *default
-  database: petshop_admin_exchance_test
+  database: <%= ENV['DATABASE_NAME'] %>
 
 production:
   <<: *default
-  database: petshop_admin_exchance_production
+  database: <%= ENV['DATABASE_NAME'] %>
