@@ -2,23 +2,23 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  # host: <%= ENV['DATABASE_HOST'] %>
-  port: <%= ENV['DATABASE_PORT'] || '5432' %>
-  # username: <%= ENV['DATABASE_USER'] %>
-  user: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # host: <%= ENV['PGHOST'] %>
+  port: <%= ENV['PGPORT'] || '5432' %>
+  # username: <%= ENV['PGUSER'] %>
+  user: <%= ENV['PGUSER'] %>
+  password: <%= ENV['PGPASSWORD'] %>
   # timeout: 5000
   # url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
+  database: <%= ENV['PGDATABASE'] %>
   
 
 test:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
+  database: <%= ENV['PGDATABASE'] %>
 
 production:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
+  database: <%= ENV['PGDATABASE'] %>

@@ -19,10 +19,10 @@ services:
   postgres:
     image: 'postgres:9.5'
     environment:
-      - POSTGRES_DB=${DATABASE_NAME}
-      - POSTGRES_USER=${DATABASE_USER}
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
-    # container_name: ${DATABASE_HOST}
+      - POSTGRES_DB=${PGDATABASE}
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_PASSWORD=${PGPASSWORD}
+    # container_name: ${PGHOST}
     ports:
       - "6543:5432"
     volumes:
