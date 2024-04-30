@@ -3,7 +3,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: appimage
+    # container_name: appimage
     depends_on:
       - 'postgres'
       - 'redis'
@@ -17,12 +17,12 @@ services:
     env_file: .env
 
   postgres:
-    image: 'postgres'
+    image: 'postgres:9.5'
     environment:
       - POSTGRES_DB=${DATABASE_NAME}
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
-    container_name: ${DATABASE_HOST}
+    # container_name: ${DATABASE_HOST}
     ports:
       - "6543:5432"
     volumes:

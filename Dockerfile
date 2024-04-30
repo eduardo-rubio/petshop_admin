@@ -5,7 +5,7 @@ ENV BUNDLER_VERSION=2.1.4
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
       build-essential nodejs libpq-dev imagemagick libmagickwand-dev
 
-RUN gem install bundler -v 2.1.4
+RUN gem install bundler -v $BUNDLER_VERSION
 
 # Seta nosso path
 ENV INSTALL_PATH /petshop_admin
@@ -15,12 +15,6 @@ RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 # Copia o nosso Gemfile para dentro do container
 COPY Gemfile ./
-
-RUN bundle check || bundle install
-
-# Copia nosso código para dentro do container
-COPY . .
-
 # Seta o path para as Gems
 ENV BUNDLE_PATH /box
 # Copia nosso código para dentro do container
