@@ -17,12 +17,14 @@ services:
     env_file: .env
 
   postgres:
-    image: 'postgres:9.5'
+    image: 'postgres'
     environment:
-      - POSTGRES_DB=${PGDATABASE}
-      - POSTGRES_USER=${PGUSER}
-      - POSTGRES_PASSWORD=${PGPASSWORD}
-    # container_name: ${PGHOST}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+    # container_name: ${POSTGRES_HOST}
     ports:
       - "6543:5432"
     volumes:

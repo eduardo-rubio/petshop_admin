@@ -21,3 +21,5 @@ ENV BUNDLE_PATH /box
 COPY . .
 
 ENV PORT=3000
+
+RUN bundle install
